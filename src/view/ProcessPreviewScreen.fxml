@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="900.0" minHeight="300.0" minWidth="300.0" prefHeight="600.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.ProcessPreviewScreen">
+
+    <Pane prefHeight="520.0" prefWidth="600.0" style="-fx-background-color: #e6fcff;">
+        <Label layoutX="50.0" layoutY="48.0" text="Przetworzone zdjęcia: ">
+            <font>
+                <Font name="Arial" size="18.0"/>
+            </font>
+        </Label>
+        <TilePane layoutX="50.0" layoutY="100.0" prefHeight="400.0" prefWidth="500.0">
+            <ScrollPane prefHeight="400.0" prefWidth="500.0">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="148.0">
+                        <children>
+                            <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="4.0" pickOnBounds="true"
+                                       preserveRatio="true"/>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </ScrollPane>
+        </TilePane>
+
+    </Pane>
+
+    <Pane layoutY="520.0" prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #26444f;">
+        <Button fx:id="koniec" layoutX="490.0" layoutY="20.0" mnemonicParsing="false" onAction="#onClickKoniec"
+                style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6),5,0.0,0,1); -fx-background-color: linear-gradient(#6082b1,#2a3e58);"
+                text="Koniec" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Button>
+
+        <Button layoutX="205.0" layoutY="20.0" mnemonicParsing="false" onAction="#onClickWgrajNowe"
+                style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6),5,0.0,0,1); -fx-background-color: linear-gradient(#6082b1,#2a3e58);"
+                text="Wgraj nowe zdjęcia" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Button>
+
+        <Button layoutX="25.0" layoutY="20.0" mnemonicParsing="false" onAction="#onClickOtworzFolder"
+                style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6),5,0.0,0,1); -fx-background-color: linear-gradient(#6082b1,#2a3e58);"
+                text="Otwórz folder" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Button>
+    </Pane>
+
+</AnchorPane>
