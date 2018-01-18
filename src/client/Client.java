@@ -7,21 +7,14 @@ import java.io.*;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 
-public class Client  {
-
-
-
+public class Client {
 
     public static void main(String[] args) {
 
         try {
+            Socket socket = new Socket("localhost", 9090);
 
-
-
-            Socket socket= new Socket("localhost", 9090);
-
-
-            DataOutputStream output=new DataOutputStream(socket.getOutputStream());
+            DataOutputStream output = new DataOutputStream(socket.getOutputStream());
             DataInputStream input = new DataInputStream(socket.getInputStream());
 
             BufferedImage image = ImageIO.read(new File("D:\\FaceDetector\\src\\resources\\faceToDetectClient2.png"));
@@ -35,9 +28,6 @@ public class Client  {
             output.flush();
             System.out.println("Flushed: " + System.currentTimeMillis());
 
-
-
-
             System.out.println("Reading: " + System.currentTimeMillis());
             byte[] sizeAr = new byte[4];
             input.read(sizeAr);
@@ -50,7 +40,6 @@ public class Client  {
 
             System.out.println("Received " + image2.getHeight() + "x" + image2.getWidth() + ": " + System.currentTimeMillis());
             ImageIO.write(image2, "jpg", new File("D:\\FaceDetector\\src\\resources\\faceDetectionFromServer.png"));
-
 
             output.writeUTF("pierwsze zdjęcie przetworzone");
 

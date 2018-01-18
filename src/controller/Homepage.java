@@ -6,13 +6,13 @@ import javafx.fxml.FXML;
 
 public class Homepage implements ControlledScreen {
 
-    ScreensController myController;
+    private ScreensController myController;
     public void setScreenParent(ScreensController screenPage) {
         myController = screenPage;
     }
 
     @FXML
-    public void onClickDalej(ActionEvent actionEvent) {
-        myController.setScreen(Main.chooseFileScreenID);
+    public void onClickDalej() {
+        myController.setScreen(Main.chooseFileScreen);
     }
 }
