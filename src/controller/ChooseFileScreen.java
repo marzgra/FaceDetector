@@ -1,7 +1,6 @@
 package controller;
 
 import app.Main;
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -15,7 +14,7 @@ import java.util.ResourceBundle;
 public class ChooseFileScreen implements Initializable, ControlledScreen {
 
 
-    ScreensController myController;
+    private ScreensController myController;
 
     @Override
     public void setScreenParent(ScreensController screenPage) {
@@ -27,11 +26,11 @@ public class ChooseFileScreen implements Initializable, ControlledScreen {
 
     }
 
-    public void onClickDalej(ActionEvent actionEvent) {
-        myController.setScreen(Main.processPreviewScreenID);
+    public void onClickDalej() {
+        myController.setScreen(Main.processPreviewScreen);
     }
 
-    public void onClickWybierzPliki(ActionEvent actionEvent) {
+    public void onClickWybierzPliki() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz zdjęcia");
         fileChooser.getExtensionFilters().addAll(
@@ -45,7 +44,7 @@ public class ChooseFileScreen implements Initializable, ControlledScreen {
         Datastore.getInstance().setFiles(files);
     }
 
-    public void onClickWybierzMiejsceZapisu(ActionEvent actionEvent) {
+    public void onClickWybierzMiejsceZapisu() {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Wybierz miejsce do zapisu");
         File outputFolder = directoryChooser.showDialog(null);

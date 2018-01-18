@@ -13,7 +13,7 @@ import java.net.URLDecoder;
 // to "faceDetection.png".
 //
 public class DetectFaceDemo {
-    File f;
+    private File f;
 
     public DetectFaceDemo(File f) {
         this.f = f;

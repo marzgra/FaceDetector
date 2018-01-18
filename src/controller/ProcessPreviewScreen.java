@@ -2,7 +2,6 @@ package controller;
 
 import app.Main;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -16,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class ProcessPreviewScreen implements Initializable, ControlledScreen {
 
-    ScreensController myController;
+    private ScreensController myController;
 
     @FXML
     private Button koniec;
@@ -30,11 +29,11 @@ public class ProcessPreviewScreen implements Initializable, ControlledScreen {
     }
 
     @FXML
-    public void onClickKoniec(ActionEvent actionEvent) {
+    public void onClickKoniec() {
         koniec.setOnAction(e -> Platform.exit());
     }
 
-    public void onClickOtworzFolder(ActionEvent actionEvent) {
+    public void onClickOtworzFolder() {
         try {
             Desktop.getDesktop().open(new File(Datastore.getInstance().getDirectoryPath()));
         } catch (IOException e) {
@@ -42,7 +41,7 @@ public class ProcessPreviewScreen implements Initializable, ControlledScreen {
         }
     }
 
-    public void onClickWgrajNowe(ActionEvent actionEvent) {
-        myController.setScreen(Main.chooseFileScreenID);
+    public void onClickWgrajNowe() {
+        myController.setScreen(Main.chooseFileScreen);
     }
 }
